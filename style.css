@@ -424,6 +424,7 @@ span {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 .project-part{
     display: flex;
@@ -443,7 +444,7 @@ span {
 }
 
 .project-part img{
-    border-radius: 69rem;
+    border-radius: 2rem;
 }
 .project-title{
     padding-top: 10px;
@@ -690,6 +691,10 @@ span {
         height: 200px;
         margin: 56px 0;
     };
+
+    .project-part{
+        width: 100%;
+    }
 }
 
 @media(max-width:520px) {
@@ -710,6 +715,9 @@ span {
     .home-sci a {
         width: 38px;
         height: 38px;
+    }
+    .project-part{
+        width: 100%;
     }
 }
 
@@ -734,6 +742,10 @@ span {
         margin-top: 2rem;
         align-items: center;
     }
+
+    .project-part{
+        width: 100%;
+    }
 }
 
 @media(max-width:371px) {
@@ -750,6 +762,10 @@ span {
 
     .home-content h1 {
         font-size: 5rem;
+    }
+
+    .project-part{
+        width: 100%;
     }
 }
 
