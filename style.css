@@ -427,18 +427,18 @@ span {
     flex-wrap: wrap;
 }
 .project-part{
+    width: 50%;
+    height: max-content;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 33%;
-    border: 2px solid black;
-    min-height: 270px;
-    background-color: rgb(140, 140, 140);
-    color: #000;
+    border: 2px solid --text-color;
+    background-color: var(--seacond-bg-color);
+    color: var(--text-color);
     padding: 2rem;
-    margin: 2rem;
+    margin: 4rem;
     font-size: 16px;
     border-radius: 1.2rem;
 }
@@ -451,7 +451,15 @@ span {
     padding-bottom: 10px;
     font-weight: bold;
 }
-
+.project-github{
+    text-align: center;
+    padding: 10px;
+}
+.project-github a{
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--main-color);
+}
 
 /* contact section */
 
