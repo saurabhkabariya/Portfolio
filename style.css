@@ -295,6 +295,7 @@ span {
 
 .about-content {
     text-align: center;
+    margin: 10px 65px;
 }
 
 .about-content h3 {
@@ -327,7 +328,6 @@ span {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: auto;
     padding-bottom: 5rem;
 }
 
@@ -414,6 +414,15 @@ span {
 
 /* Project Section */
 
+#projects{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: var(--seacond-bg-color);
+    padding-top: 85px;
+}
+
 #sub-heading{
     text-align: center;
     font-size: 30px;
@@ -428,14 +437,14 @@ span {
     flex-wrap: wrap;
 }
 .project-part{
-    width: 20vw;
+    width: 25%;
     min-height: 25vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: var(--seacond-bg-color);
+    background-color: var(--bg-color);
     color: var(--text-color);
     padding: 2rem;
     margin: 4rem;
@@ -451,9 +460,14 @@ span {
     padding-bottom: 10px;
     font-weight: bold;
 }
+
+.mb-10{
+    margin-bottom: 10px !important;
+}
 .project-github{
     text-align: center;
     padding: 10px;
+    margin-top: auto;
 }
 .project-github a{
     text-decoration: none;

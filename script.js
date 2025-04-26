@@ -11,8 +11,8 @@ menuicon.onclick = () => {
 // scroll section
 
 
-let section = document.querySelector('section');
-let navLinks = document.querySelector('header nav a');
+let section = document.querySelectorAll('section');
+let navLinks = document.querySelectorAll('header nav a');
 
 window.onscroll = () => {
 
