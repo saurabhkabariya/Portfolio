@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saurabh's Portfolio</title>
+    <title>Saurabh's īPortfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -219,7 +219,7 @@
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me!</span></h2>
 
-        <form action="#">
+        <form id="contact-form" action="#" autocomplete="off">
 
 
             <div class="input-box">
@@ -257,6 +257,7 @@
                 <button type="submit" class="btn">Submit</button>
             </div>
         </form>
+        <div id="form-message" style="margin-top:10px;color:green;"></div>
     </section>
 
 
@@ -274,7 +275,48 @@
     </footer>
 
     <!-- this is for send a mail -->
-    <script src="https://smtpjs.com/v3/smtp.js">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const subject = document.getElementById('subject').value.trim();
+        const message = document.getElementById('message').value.trim();
+        const formMessage = document.getElementById('form-message');
+        if (!name || !email || !subject || !message) {
+            formMessage.style.color = 'red';
+            formMessage.textContent = 'Please fill in all required fields.';
+            return;
+        }
+        const emailBody = `
+            <h3>New Contact Form Submission</h3>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Phone:</strong> ${phone}</p>
+            <p><strong>Subject:</strong> ${subject}</p>
+            <p><strong>Message:</strong><br>${message.replace(/\n/g, '<br>')}</p>
+        `;
+        Email.send({
+            SecureToken: " c14dbb62-d9e9-4a1d-8b12-9c6fb515ff48", // Replace with your secure token from smtpjs.com
+            To: 'saurabhkabariya@gmail.com',
+            From: "saurabhkabariya@gmail.com", // Use your verified sender email
+            Subject: `Portfolio Contact: ${subject}`,
+            Body: emailBody
+        }).then(
+            response => {
+                if (response === "OK") {
+                    formMessage.style.color = 'green';
+                    formMessage.textContent = "Thank you! Your message has been sent.";
+                    document.getElementById('contact-form').reset();
+                } else {
+                    formMessage.style.color = 'red';
+                    formMessage.textContent = "Failed to send message. Please try again later.";
+                }
+            }
+        );
+    });
     </script>
     <script src="script.js"> stick</script>
 </body>
